@@ -9,18 +9,11 @@ import SwiftUI
 
 struct MainListView: View {
     @EnvironmentObject var store: MemoStore
+    
     var body: some View {
         NavigationView {
             List(store.list) { memo in
-                VStack(alignment: .leading) {
-                    Text(memo.content)
-                        .font(.body)
-                        .lineLimit(1)
-                    
-                    Text(memo.insertDate, style: .date)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
+                MemoCell(memo: memo)
             }
             .navigationTitle("메모")
         }
