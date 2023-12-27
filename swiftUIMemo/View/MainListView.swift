@@ -13,7 +13,7 @@ struct MainListView: View {
     @State private var showComposer: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(store.list) { memo in
                 NavigationLink {
                     DetailView(memo: memo)
