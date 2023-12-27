@@ -14,12 +14,17 @@ struct MainListView: View {
     
     var body: some View {
         NavigationStack {
-            List(store.list) { memo in
-                NavigationLink {
-                    DetailView(memo: memo)
-                } label: {
-                    MemoCell(memo: memo)
+            List {
+                ForEach(store.list) { memo in
+                    NavigationLink {
+                        DetailView(memo: memo)
+                    } label: {
+                        MemoCell(memo: memo)
+                    }
                 }
+                .onDelete(perform: { indexSet in
+                    store.delete(set: indexSet)
+                })
             }
             .navigationTitle("메모")
             .toolbar {
