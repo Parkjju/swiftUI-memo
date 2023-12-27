@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DetailView: View {
-    @ObservedObject var memo: Memo
+    @ObservedObject var memo: MemoEntity
     
-    @EnvironmentObject var store: MemoStore
+    @EnvironmentObject var manager: CoreDataManager
     
     @State private var showComposer = false
     @State private var showDeleteAlert = false
@@ -22,14 +22,14 @@ struct DetailView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        Text(memo.content)
+                        Text(memo.content ?? "")
                             .padding()
                         
                         Spacer()
                     }
                     
                     
-                    Text(memo.insertDate, style: .date)
+                    Text(memo.insertDate ?? .now, style: .date)
                         .padding()
                         .font(.footnote)
                         .foregroundStyle(.secondary)
@@ -48,7 +48,7 @@ struct DetailView: View {
                 .foregroundStyle(.red)
                 .alert("삭제 확인", isPresented: $showDeleteAlert) {
                     Button(role: .destructive) {
-                        store.delete(memo: memo)
+                        manager.delete(memo: memo)
                         dismiss()
                     } label: {
                         Text("삭제")
@@ -72,7 +72,7 @@ struct DetailView: View {
 
 #Preview {
     NavigationStack {
-        DetailView(memo: Memo(content: "Hello"))
-            .environmentObject(MemoStore())
+        DetailView(memo: MemoEntity(context: CoreDataManager.shared.mainContext))
+            .environmentObject(CoreDataManager.shared)
     }
 }

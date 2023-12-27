@@ -47,10 +47,9 @@ class CoreDataManager: ObservableObject {
         let newMemo = MemoEntity(context: mainContext)
         newMemo.content = content
         newMemo.insertDate = Date.now
+        
+        saveContext()
     }
-    
-    @FetchRequest(sortDescriptors: [SortDescriptor(\MemoEntity.insertDate, order: .reverse)])
-    var memoList: FetchedResults<MemoEntity>
     
     func update(memo: MemoEntity?, content: String) {
         memo?.content = content
