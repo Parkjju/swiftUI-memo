@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		887DAC182B3B2C300061F29D /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAC172B3B2C300061F29D /* ComposeView.swift */; };
+		887DAC1A2B3BACA20061F29D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAC192B3BACA20061F29D /* DetailView.swift */; };
 		C93676552B3AA48E00B58856 /* swiftUIMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93676542B3AA48E00B58856 /* swiftUIMemoApp.swift */; };
 		C93676592B3AA49000B58856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93676582B3AA49000B58856 /* Assets.xcassets */; };
 		C936765C2B3AA49000B58856 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C936765B2B3AA49000B58856 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		887DAC172B3B2C300061F29D /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
+		887DAC192B3BACA20061F29D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C93676512B3AA48E00B58856 /* swiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93676542B3AA48E00B58856 /* swiftUIMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUIMemoApp.swift; sourceTree = "<group>"; };
 		C93676582B3AA49000B58856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				C93676672B3AA6CE00B58856 /* MainListView.swift */,
 				C93676702B3B2BD400B58856 /* MemoCell.swift */,
 				887DAC172B3B2C300061F29D /* ComposeView.swift */,
+				887DAC192B3BACA20061F29D /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93676712B3B2BD400B58856 /* MemoCell.swift in Sources */,
+				887DAC1A2B3BACA20061F29D /* DetailView.swift in Sources */,
 				C936765E2B3AA49000B58856 /* Persistence.swift in Sources */,
 				C936766E2B3AAE1500B58856 /* MemoStore.swift in Sources */,
 				C93676682B3AA6CE00B58856 /* MainListView.swift in Sources */,
